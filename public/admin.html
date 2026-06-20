@@ -3,16 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Admin</title>
+  <title>CMS</title>
 </head>
 <body>
   <script>
     window.CMS_MANUAL_INIT = true;
-  </script>
 
-  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
-
-  <script>
     const config = {
       backend: {
         name: "github",
@@ -24,7 +20,7 @@
       collections: [
         {
           name: "posts",
-          label: "Blog Posts",
+          label: "Posts",
           folder: "posts",
           create: true,
           slug: "{{slug}}",
@@ -32,7 +28,7 @@
             { label: "Title", name: "title", widget: "string" },
             { label: "Subtitle", name: "subtitle", widget: "string" },
             { label: "Category", name: "category", widget: "string" },
-            { label: "Cover Image", name: "image", widget: "image" },
+            { label: "Image", name: "image", widget: "image" },
             { label: "Body", name: "body", widget: "markdown" }
           ]
         }
@@ -41,5 +37,7 @@
 
     CMS.init({ config });
   </script>
+
+  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 </body>
 </html>
