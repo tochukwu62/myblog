@@ -6,6 +6,40 @@
   <title>Blog Admin</title>
 </head>
 <body>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
+
   <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+
+  <script>
+    const config = {
+      backend: {
+        name: "github",
+        repo: "tochukwu62/myblog",
+        branch: "main"
+      },
+      media_folder: "uploads",
+      public_folder: "/uploads",
+      collections: [
+        {
+          name: "posts",
+          label: "Blog Posts",
+          folder: "posts",
+          create: true,
+          slug: "{{slug}}",
+          fields: [
+            { label: "Title", name: "title", widget: "string" },
+            { label: "Subtitle", name: "subtitle", widget: "string" },
+            { label: "Category", name: "category", widget: "string" },
+            { label: "Cover Image", name: "image", widget: "image" },
+            { label: "Body", name: "body", widget: "markdown" }
+          ]
+        }
+      ]
+    };
+
+    CMS.init({ config });
+  </script>
 </body>
 </html>
