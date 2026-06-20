@@ -12,6 +12,7 @@ collections:
     folder: "public/posts"
     create: true
     slug: "{{slug}}"
+
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string" }
