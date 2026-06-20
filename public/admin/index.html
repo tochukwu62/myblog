@@ -6,9 +6,35 @@
   <title>Blog Admin</title>
 </head>
 <body>
-  <!-- Tell Decap CMS exactly where to find the config -->
   <script>
-    window.CMS_CONFIG_PATH = '/admin/config.yml';
+    // Define the CMS config directly
+    const config = {
+      backend: {
+        name: 'github',
+        repo: 'tochukwu62/myblog',
+        branch: 'main',
+      },
+      media_folder: 'public/uploads',
+      public_folder: '/uploads',
+      collections: [
+        {
+          name: 'posts',
+          label: 'Blog Posts',
+          folder: 'public/posts',
+          create: true,
+          slug: '{{slug}}',
+          fields: [
+            { label: 'Title', name: 'title', widget: 'string' },
+            { label: 'Subtitle', name: 'subtitle', widget: 'string' },
+            { label: 'Category', name: 'category', widget: 'string' },
+            { label: 'Cover Image', name: 'image', widget: 'image' },
+            { label: 'Body', name: 'body', widget: 'markdown' },
+          ],
+        },
+      ],
+    };
+
+    window.CMS_CONFIG = config;
   </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
