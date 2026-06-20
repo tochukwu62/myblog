@@ -1,42 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
+  <title>Content Manager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Admin</title>
 </head>
 <body>
-  <script>
-    // Define the CMS configuration in JavaScript
-    const config = {
-      backend: {
-        name: 'github',
-        repo: 'tochukwu62/myblog',
-        branch: 'main',
-      },
-      media_folder: 'public/uploads',
-      public_folder: '/uploads',
-      collections: [
-        {
-          name: 'posts',
-          label: 'Blog Posts',
-          folder: 'public/posts',
-          create: true,
-          slug: '{{slug}}',
-          fields: [
-            { label: 'Title', name: 'title', widget: 'string' },
-            { label: 'Subtitle', name: 'subtitle', widget: 'string' },
-            { label: 'Category', name: 'category', widget: 'string' },
-            { label: 'Cover Image', name: 'image', widget: 'image' },
-            { label: 'Body', name: 'body', widget: 'markdown' },
-          ],
-        },
-      ],
-    };
-    // Expose it to the CMS
-    window.CMS_CONFIG = config;
-  </script>
-  <!-- Load Decap CMS with a cache-busting query string -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js?v=1"></script>
+  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 </body>
 </html>
