@@ -4,39 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog Admin</title>
+  <!-- Load config first -->
+  <script src="/admin/config.js"></script>
 </head>
 <body>
-  <script>
-    const config = {
-      backend: {
-        name: 'github',
-        repo: 'tochukwu62/myblog',
-        branch: 'main',
-        // Use the default Decap CMS proxy
-        auth_endpoint: 'https://api.github.com',
-      },
-      media_folder: 'public/uploads',
-      public_folder: '/uploads',
-      collections: [
-        {
-          name: 'posts',
-          label: 'Blog Posts',
-          folder: 'public/posts',
-          create: true,
-          slug: '{{slug}}',
-          fields: [
-            { label: 'Title', name: 'title', widget: 'string' },
-            { label: 'Subtitle', name: 'subtitle', widget: 'string' },
-            { label: 'Category', name: 'category', widget: 'string' },
-            { label: 'Cover Image', name: 'image', widget: 'image' },
-            { label: 'Body', name: 'body', widget: 'markdown' },
-          ],
-        },
-      ],
-    };
-
-    window.CMS_CONFIG = config;
-  </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
